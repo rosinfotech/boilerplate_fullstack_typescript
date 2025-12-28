@@ -17,10 +17,10 @@ local_deploy_remote_only_www: init
 	.makefile/local_deploy_remote_only_www.sh
 
 local_docker_compose_start: init
-	docker compose -f ops/docker-compose.local.yml --env-file envs/.env.local up -d
+	docker compose -f ops/docker-compose.local.yml --env-file envs/.env.local.backend --env-file envs/.env.local.frontend up -d
 
 local_docker_compose_stop: init
-	docker compose -f ops/docker-compose.local.yml --env-file envs/.env.local down
+	docker compose -f ops/docker-compose.local.yml --env-file envs/.env.local.backend --env-file envs/.env.local.frontend down
 
 local_deploy_remote: init
 	.makefile/local_deploy_remote.sh

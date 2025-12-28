@@ -19,23 +19,24 @@ RUN npm run build
 
 FROM base AS runner
 
-ENV NODE_ENV=production
+ENV NODE_ENV=development
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
 COPY --from=builder /app/public ./public
 
-RUN mkdir .next
-RUN chown nextjs:nodejs .next
+RUN mkdir .build.frontend
+RUN chown nextjs:nodejs .build.frontend
 
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+COPY --from=builder --chown=nextjs:nodejs /app/src/apps/frontend/.build.frontend/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/src/apps/frontend/.build.frontend/static ./.build.frontend/static
 
 USER nextjs
 
-ARG PORT=38501
-ENV PORT=${PORT}
+ENV HOSTNAME="0.0.0.0"
+ENV PORT=38501
+
 EXPOSE ${PORT}
 
 CMD ["node", "server.js"]

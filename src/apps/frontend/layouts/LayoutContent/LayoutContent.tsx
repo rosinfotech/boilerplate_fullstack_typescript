@@ -3,7 +3,7 @@
 import type { FC, PropsWithChildren } from "react";
 import { ConfigProvider, Layout } from "antd";
 import { NavigationMenu } from "@/components/NavigationMenu";
-import ThemeToggle from "@/components/ThemeToggle/ThemeToggle";
+import { ThemeToggle } from "@/components/ThemeToggle/ThemeToggle";
 import { MENU_ITEMS } from "@/configs/menu-items";
 import { antDesignThemeDark } from "@/layouts/constants/theme-dark";
 import { antDesignThemeLight } from "@/layouts/constants/theme-light";
@@ -35,5 +35,3 @@ export const LayoutContent: FC<PropsWithChildren> = props => {
         </ConfigProvider>
     );
 };
-
-export default LayoutContent;

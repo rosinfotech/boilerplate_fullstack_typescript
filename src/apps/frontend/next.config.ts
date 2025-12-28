@@ -6,7 +6,7 @@ const isMobile = process.env.NEXT_PUBLIC_PLATFORM === "mobile";
 const nextConfig: NextConfig = isMobile
     ? {
           compress: true,
-          distDir: ".next.mobile",
+          distDir: ".build.mobile",
           experimental: {
               optimizePackageImports: ["tailwindcss"],
           },
@@ -21,6 +21,7 @@ const nextConfig: NextConfig = isMobile
       }
     : {
           compress: true,
+          distDir: ".build.frontend",
           experimental: {
               optimizePackageImports: ["tailwindcss"],
           },

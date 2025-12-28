@@ -6,6 +6,12 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.0.3] - 2025-12-28
+
+### Added
+
+- Initial version of frontend and backend parts;
+
 ## [0.0.2] - 2025-12-28
 
 ### Added

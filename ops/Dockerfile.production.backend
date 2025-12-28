@@ -1,0 +1,40 @@
+FROM node:23-alpine AS base
+
+WORKDIR /app
+
+FROM base AS deps
+
+RUN apk add --no-cache libc6-compat
+
+COPY package.json package-lock.json ./
+COPY src/apps/backend/package.json ./src/apps/backend/
+COPY src/types/package.json ./src/types/
+COPY src/utils/package.json ./src/utils/
+
+RUN npm ci --omit=dev
+
+FROM base AS builder
+
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
+
+RUN npm run build:backend
+
+FROM base AS runner
+
+ENV NODE_ENV=production
+
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nestjs
+
+COPY --from=builder --chown=nestjs:nodejs /app/src/apps/backend/.build.backend ./.build.backend
+COPY --from=builder --chown=nestjs:nodejs /app/node_modules ./node_modules
+COPY --from=builder /app/envs ./envs
+
+USER nestjs
+
+ARG PORT=38502
+ENV PORT=${PORT}
+EXPOSE ${PORT}
+
+CMD ["node", ".build.backend/main"]

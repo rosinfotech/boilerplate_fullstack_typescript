@@ -1,16 +1,28 @@
 name: boilerplate_fullstack_typescript_local
 
 services:
-    app:
+    backend:
         build:
-            args:
-                PORT: ${PORT:-38501}
             context: ..
-            dockerfile: ops/Dockerfile.local
-        container_name: boilerplate_fullstack_typescript_local-
+            dockerfile: ops/Dockerfile.local.backend
+        container_name: boilerplate_fullstack_typescript_local_backend
         env_file:
-            - ../envs/.env.local
-        image: boilerplate_fullstack_typescript:local-0.0.2
+            - ../envs/.env.local.backend
+        image: boilerplate_fullstack_typescript:local-backend-0.0.3
         ports:
-            - "${PORT:-38501}:${PORT:-38501}"
+            - "38502:38502"
+        restart: unless-stopped
+
+    frontend:
+        build:
+            context: ..
+            dockerfile: ops/Dockerfile.local.frontend
+        container_name: boilerplate_fullstack_typescript_local_frontend
+        depends_on:
+            - backend
+        env_file:
+            - ../envs/.env.local.frontend
+        image: boilerplate_fullstack_typescript:local-frontend-0.0.3
+        ports:
+            - "38501:38501"
         restart: unless-stopped

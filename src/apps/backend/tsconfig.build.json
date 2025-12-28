@@ -1,0 +1,7 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "outDir": ".build.backend"
+    },
+    "exclude": [".build.backend", "node_modules", "test", "**/*.spec.ts"]
+}

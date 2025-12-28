@@ -28,5 +28,3 @@ export const NavigationMenu: FC<INavigationMenuProps> = props => {
         />
     );
 };
-
-export default NavigationMenu;

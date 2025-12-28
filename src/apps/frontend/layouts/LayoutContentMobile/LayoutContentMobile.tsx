@@ -61,5 +61,3 @@ export const LayoutContentMobile: FC<PropsWithChildren> = props => {
         </ConfigProvider>
     );
 };
-
-export default LayoutContentMobile;

@@ -9,8 +9,8 @@ const config: CapacitorConfig = {
     appName: "Rosinfotech Boilerplate Fullstack TypeScript/Mobile",
     plugins: {
         CapacitorAssets: {
-            iconPath: "src/capacitor/assets/icon.svg",
-            splashPath: "src/capacitor/assets/splash.svg",
+            iconPath: "capacitor/assets/icon.svg",
+            splashPath: "capacitor/assets/splash.svg",
         },
     },
     server: {
@@ -20,7 +20,7 @@ const config: CapacitorConfig = {
             url: `http://localhost:${port}`,
         }),
     },
-    webDir: ".next.mobile",
+    webDir: ".build.mobile",
 };
 
 export default config;

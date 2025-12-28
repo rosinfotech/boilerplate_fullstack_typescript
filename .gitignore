@@ -1,68 +1,40 @@
-# Dependencies
-/node_modules
-/.pnp
-.pnp.js
-.yarn/install-state.gz
-
-# Testing
-/coverage
-
-# Next.js
-/.next/
-/.next.mobile/
-/out/
-
-# Production
-/build
-/dist
-
-# Misc
-.DS_Store
-*.pem
-
-# Debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Local env files
-envs/.env
-envs/.env.development
-envs/.env.development.local
-envs/.env.development.mobile
-envs/.env.local
-envs/.env.local.mobile
-envs/.env.production
-envs/.env.production.local
-envs/.env.production.mobile
-envs/.env.test
-envs/.env.test.local
-.env*.local
-.env.development.local
-.env.production.local
-.env.test.local
-
-# Vercel
-.vercel
-
-# TypeScript
-*.tsbuildinfo
-next-env.d.ts
-
-# IDE
 .vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
 !.vscode/settings.json
 !.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.idea
-*.swp
+
+**/.next
+**/android/
+**/build
+**/dist
+**/ios
+**/node_modules
+
+*.pem
 *.swo
+*.swp
+*.tsbuildinfo
 *~
 
-# OS
+.DS_Store
+
+.build.backend
+.build.frontend
+.build.mobile
+.idea
+.vercel
 Thumbs.db
 
-# Capacitor
-/android/
-/ios/
+envs/.env.development.backend
+envs/.env.development.frontend
+envs/.env.development.mobile
+envs/.env.local.backend
+envs/.env.local.frontend
+envs/.env.local.mobile
+envs/.env.production.backend
+envs/.env.production.frontend
+envs/.env.production.mobile
+
+next-env.d.ts
+npm-debug.log*

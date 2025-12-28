@@ -1,14 +1,28 @@
 name: boilerplate_fullstack_typescript_production
 
 services:
-    app:
+    backend:
         build:
             context: ..
-            dockerfile: ops/Dockerfile.production
-        container_name: boilerplate_fullstack_typescript_production
+            dockerfile: ops/Dockerfile.production.backend
+        container_name: boilerplate_fullstack_typescript_production_backend
         env_file:
-            - ../envs/.env.production
-        image: boilerplate_fullstack_typescript:production-0.0.2
+            - ../envs/.env.production.backend
+        image: boilerplate_fullstack_typescript:production-backend-0.0.3
+        ports:
+            - "${PORT:-38502}:${PORT:-38502}"
+        restart: unless-stopped
+
+    frontend:
+        build:
+            context: ..
+            dockerfile: ops/Dockerfile.production.frontend
+        container_name: boilerplate_fullstack_typescript_production_frontend
+        depends_on:
+            - backend
+        env_file:
+            - ../envs/.env.production.frontend
+        image: boilerplate_fullstack_typescript:production-frontend-0.0.3
         ports:
             - "${PORT:-38501}:${PORT:-38501}"
         restart: unless-stopped
