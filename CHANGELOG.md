@@ -6,6 +6,12 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.0.4] - 2025-12-28
+
+### Updated
+
+- README.md;
+
 ## [0.0.3] - 2025-12-28
 
 ### Added

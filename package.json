@@ -1,7 +1,7 @@
 {
     "name": "@rosinfo.tech/boilerplate_fullstack_typescript",
     "description": "Rosinfotech Boilerplate Fullstack TypeScript",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "author": "rosinfo.tech",
     "license": "UNLICENSED",
     "scripts": {
@@ -19,8 +19,8 @@
         "dev:mobile:ios": "npm run dev:mobile:ios --workspace=@apps/frontend",
         "format": "prettier --check \"**/*.{js,jsx,ts,tsx,json,css,scss}\"",
         "format:fix": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss}\"",
-        "husky:pre-commit": "",
-        "husky:pre-push": "npm run format:fix && npm run stylelint:fix && npm run lint:fix",
+        "husky:pre-commit": "npm run format:fix && npm run stylelint:fix && npm run lint:fix",
+        "husky:pre-push": "",
         "lint": "eslint .",
         "lint:fix": "eslint . --fix",
         "mobile:assets": "npm run mobile:assets --workspace=@apps/frontend",

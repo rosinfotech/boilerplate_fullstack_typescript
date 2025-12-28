@@ -1,6 +1,6 @@
 {
     "name": "@apps/backend",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "private": true,
     "scripts": {
         "build": "nest build",

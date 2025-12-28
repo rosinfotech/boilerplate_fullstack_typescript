@@ -7,17 +7,35 @@
 
 ## Stack
 
-- Server Side Rendering;
-- Clean Architecture;
-- NextJS;
-- TypeScript;
-- React;
-- Ant Design;
-- TailwindCSS;
-- Capacitor;
-- ESlint;
-- Prettier;
-- Stylelint;
+- General:
+
+  - Clean Architecture;
+  - TypeScript;
+  - ESlint;
+  - Prettier;
+  - Stylelint;
+
+- Backend:
+
+  - NestJS;
+
+- Frontend:
+
+  - NextJS:
+
+    - Server Side Rendering for Web;
+
+  - React;
+  - Ant Design;
+  - TailwindCSS;
+
+- Mobile:
+
+  - NextJS:
+
+    - Client Side Rendering for Mobile;
+
+  - Capacitor;
 
 ## Deployed version
 
