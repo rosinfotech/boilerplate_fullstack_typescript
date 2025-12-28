@@ -1,2 +1,14 @@
-0.0.1
-0.0.1
+0.0.2
+0.0.2
+package.json
+www/index.html
+envs/.env.development
+envs/.env.development.mobile
+envs/.env.example
+envs/.env.local
+envs/.env.local.mobile
+envs/.env.production
+envs/.env.production.mobile
+ops/docker-compose.development.yml
+ops/docker-compose.local.yml
+ops/docker-compose.production.yml

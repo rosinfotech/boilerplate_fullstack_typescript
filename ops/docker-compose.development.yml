@@ -1,0 +1,14 @@
+name: boilerplate_fullstack_typescript_development
+
+services:
+    app:
+        build:
+            context: ..
+            dockerfile: ops/Dockerfile.development
+        container_name: boilerplate_fullstack_typescript_development
+        env_file:
+            - ../envs/.env.development
+        image: boilerplate_fullstack_typescript:development-0.0.2
+        ports:
+            - "${PORT:-38501}:${PORT:-38501}"
+        restart: unless-stopped

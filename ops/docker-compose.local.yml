@@ -1,0 +1,16 @@
+name: boilerplate_fullstack_typescript_local
+
+services:
+    app:
+        build:
+            args:
+                PORT: ${PORT:-38501}
+            context: ..
+            dockerfile: ops/Dockerfile.local
+        container_name: boilerplate_fullstack_typescript_local-
+        env_file:
+            - ../envs/.env.local
+        image: boilerplate_fullstack_typescript:local-0.0.2
+        ports:
+            - "${PORT:-38501}:${PORT:-38501}"
+        restart: unless-stopped

@@ -1,0 +1,14 @@
+name: boilerplate_fullstack_typescript_production
+
+services:
+    app:
+        build:
+            context: ..
+            dockerfile: ops/Dockerfile.production
+        container_name: boilerplate_fullstack_typescript_production
+        env_file:
+            - ../envs/.env.production
+        image: boilerplate_fullstack_typescript:production-0.0.2
+        ports:
+            - "${PORT:-38501}:${PORT:-38501}"
+        restart: unless-stopped

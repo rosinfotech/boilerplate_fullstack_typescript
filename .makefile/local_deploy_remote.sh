@@ -10,10 +10,10 @@ source ./.makefile/get_home_secret.sh
 
 main() {
 
-    local host=$(getHomeSecret '.tech.rosinfo.ssh.host')
-    local port=$(getHomeSecret '.tech.rosinfo.ssh.port')
-    local username=$(getHomeSecret '.tech.rosinfo.ssh.username')
-    local password=$(getHomeSecret '.tech.rosinfo.ssh.password')
+    local host=$(getHomeSecret '.tech.rosinfo.demo.boilerplate_fullstack_typescript.ssh.host')
+    local port=$(getHomeSecret '.tech.rosinfo.demo.boilerplate_fullstack_typescript.ssh.port')
+    local username=$(getHomeSecret '.tech.rosinfo.demo.boilerplate_fullstack_typescript.ssh.username')
+    local password=$(getHomeSecret '.tech.rosinfo.demo.boilerplate_fullstack_typescript.ssh.password')
 
     if [ -z "$host" ] || [ -z "$port" ] || [ -z "$username" ] || [ -z "$password" ]; then
         echo "Error: Failed to load SSH secrets from $SECRETS_FILE"
@@ -22,15 +22,41 @@ main() {
 
     sshClient init "$host" "$port" "$username" "$password"
 
-    sshClient execf "rm -rf /home/rosinfo.tech/www"
+    npm run format:fix
 
-    sshClient execf "mkdir -p /home/rosinfo.tech/www"
+    npm run lint:fix
 
-    sshDirectoryUpload "./dist" "/home/rosinfo.tech/www" "/.DS_Store"
+    npm run stylelint:fix
 
-    sshClient execf "chmod -R 0775 /home/rosinfo.tech/www"
+    sshClient execf "docker compose -f /home/boilerplate-fullstack-typescript/app/ops/docker-compose.production.yml down"
 
-    sshClient execf "chown -R rosinfo.tech:www /home/rosinfo.tech/www"
+    sshClient execf "rm -rf /home/boilerplate-fullstack-typescript/app"
+
+    sshClient execf "mkdir -p /home/boilerplate-fullstack-typescript/app"
+
+    sshFileUpload "./package.json" "/home/boilerplate-fullstack-typescript/app/package.json"
+
+    sshFileUpload "./package-lock.json" "/home/boilerplate-fullstack-typescript/app/package-lock.json"
+
+    sshFileUpload "./next.config.ts" "/home/boilerplate-fullstack-typescript/app/next.config.ts"
+
+    sshFileUpload "./postcss.config.mjs" "/home/boilerplate-fullstack-typescript/app/postcss.config.mjs"
+
+    sshFileUpload "./tsconfig.json" "/home/boilerplate-fullstack-typescript/app/tsconfig.json"
+
+    sshDirectoryUpload "./envs" "/home/boilerplate-fullstack-typescript/app/envs" "/.DS_Store"
+
+    sshDirectoryUpload "./ops" "/home/boilerplate-fullstack-typescript/app/ops" "/.DS_Store"
+
+    sshDirectoryUpload "./public" "/home/boilerplate-fullstack-typescript/app/public" "/.DS_Store"
+
+    sshDirectoryUpload "./src" "/home/boilerplate-fullstack-typescript/app/src" "/.DS_Store"
+
+    sshClient execf "chmod -R 0775 /home/boilerplate-fullstack-typescript/app"
+
+    sshClient execf "chown -R boilerplate-fullstack-typescript:www /home/boilerplate-fullstack-typescript/app"
+
+    sshClient exec "docker compose -f /home/boilerplate-fullstack-typescript/app/ops/docker-compose.production.yml up -d"
 
     sshClient cleanup
 
