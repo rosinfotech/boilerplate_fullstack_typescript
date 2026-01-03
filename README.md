@@ -61,13 +61,25 @@
 
 - Mobile:
 
-  - Terminal 1: `npm run dev:mobile`;
+  - iOS:
 
-  - Terminal 2:
+    - Terminal 1:
 
-    - `npm run build:mobile:ios` and `npm run dev:mobile:ios`;
+      - `npm run build:mobile:ios`;
+      - `npm run dev:mobile:server:ios`;
 
-    - or `npm run build:mobile:android` and `npm run dev:mobile:android`;
+    - Terminal 2: `npm run dev:mobile:ios`;
+
+  - Android:
+
+    - Terminal 1:
+
+      - `npm run build:mobile:android`;
+      - `npm run dev:mobile:server:android`;
+
+
+    - Terminal 2: `npm run dev:mobile:android`;
+
 
 ### Building
 
@@ -79,9 +91,13 @@
 
   - Build:
 
-    - `npm run build:mobile:ios`;
+    - iOS:
 
-    - or `npm run build:mobile:android`;
+      - `npm run build:mobile:ios`;
+
+    - Android:
+
+      - `npm run build:mobile:android`;
 
 ### Deployment
 

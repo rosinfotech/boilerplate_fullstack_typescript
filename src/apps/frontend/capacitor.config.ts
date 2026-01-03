@@ -1,8 +1,12 @@
 import type { CapacitorConfig } from "@capacitor/cli";
+import { logEnvVariables } from "../../../.scripts/log-env-variables.ts";
 
 
 const isDevelopment = process.env.NODE_ENV === "development";
-const port = process.env.PORT || "3000";
+const isAndroid = process.env.NEXT_PUBLIC_PLATFORM_MOBILE === "android";
+const port = process.env.PORT || "38501";
+
+logEnvVariables();
 
 const config: CapacitorConfig = {
     appId: "tech.rosinfo.demo.boilerplate_fullstack_typescript",
@@ -17,7 +21,7 @@ const config: CapacitorConfig = {
         androidScheme: "https",
         ...(isDevelopment && {
             cleartext: true,
-            url: `http://localhost:${port}`,
+            url: isAndroid ? `http://10.0.2.2:${port}` : `http://localhost:${port}`,
         }),
     },
     webDir: ".build.mobile",

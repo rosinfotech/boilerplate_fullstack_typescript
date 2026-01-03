@@ -15,7 +15,7 @@ const RootLayoutMobile = (props: Readonly<PropsWithChildren>) => {
             <head>
                 <link href="/fonts/mont/index.css" rel="stylesheet" />
                 <meta
-                    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover"
+                    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1,  user-scalable=no, viewport-fit=cover"
                     name="viewport"
                 />
             </head>

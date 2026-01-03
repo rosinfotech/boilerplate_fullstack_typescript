@@ -6,6 +6,20 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.0.5] - 2025-01-03
+
+### Added
+
+- @rosinfo.tech/capacitor-plugin-safe-area;
+
+### Optimized
+
+- NPM commands optimizations;
+
+### Fixed
+
+- Few NPM vulnerabilities were fixed;
+
 ## [0.0.4] - 2025-12-28
 
 ### Updated

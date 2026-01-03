@@ -21,12 +21,23 @@
             }
         ]
     },
-    "exclude": [".build.frontend", ".build.mobile", ".next", "build", "dist", "node_modules"],
+    "exclude": [
+        ".build.frontend",
+        ".build.mobile",
+        ".next",
+        "android",
+        "build",
+        "dist",
+        "ios",
+        "node_modules"
+    ],
     "include": [
         "**/*.ts",
         "**/*.tsx",
-        ".build.frontend/types/**/*.ts",
+        "../../types/**/*.d.ts",
+        ".build.mobile/types/**/*.ts",
+        ".next/types/**/*.ts",
         "next-env.d.ts",
-        ".next/types/**/*.ts"
+        ".build.frontend/types/**/*.ts"
     ]
 }

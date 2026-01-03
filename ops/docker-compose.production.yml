@@ -8,7 +8,7 @@ services:
         container_name: boilerplate_fullstack_typescript_production_backend
         env_file:
             - ../envs/.env.production.backend
-        image: boilerplate_fullstack_typescript:production-backend-0.0.4
+        image: boilerplate_fullstack_typescript:production-backend-0.0.5
         ports:
             - "${PORT:-38502}:${PORT:-38502}"
         restart: unless-stopped
@@ -22,7 +22,7 @@ services:
             - backend
         env_file:
             - ../envs/.env.production.frontend
-        image: boilerplate_fullstack_typescript:production-frontend-0.0.4
+        image: boilerplate_fullstack_typescript:production-frontend-0.0.5
         ports:
             - "${PORT:-38501}:${PORT:-38501}"
         restart: unless-stopped

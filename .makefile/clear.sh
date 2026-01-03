@@ -2,6 +2,7 @@
 
 lsof -ti:38501 | xargs kill -9
 lsof -ti:38502 | xargs kill -9
+lsof -ti:8081 | xargs kill -9
 
 rm -rf android
 rm -rf ios
@@ -14,6 +15,8 @@ rm -rf src/apps/backend/node_modules
 rm -rf src/apps/frontend/.build.frontend
 rm -rf src/apps/frontend/.build.mobile
 rm -rf src/apps/frontend/.next
+rm -rf src/apps/frontend/android
 rm -rf src/apps/frontend/build
 rm -rf src/apps/frontend/dist
+rm -rf src/apps/frontend/ios
 rm -rf src/apps/frontend/node_modules

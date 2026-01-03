@@ -8,7 +8,7 @@ services:
         container_name: boilerplate_fullstack_typescript_development_backend
         env_file:
             - ../envs/.env.development.backend
-        image: boilerplate_fullstack_typescript:development-backend-0.0.4
+        image: boilerplate_fullstack_typescript:development-backend-0.0.5
         ports:
             - "38502:38502"
         restart: unless-stopped
@@ -22,7 +22,7 @@ services:
             - backend
         env_file:
             - ../envs/.env.development.frontend
-        image: boilerplate_fullstack_typescript:development-frontend-0.0.4
+        image: boilerplate_fullstack_typescript:development-frontend-0.0.5
         ports:
             - "38501:38501"
         restart: unless-stopped

@@ -12,16 +12,19 @@ export default [
     {
         ignores: [
             "**/*.min.js",
+            "**/.build.backend/",
+            "**/.build.frontend/",
+            "**/.build.mobile/",
+            "**/.next.mobile/",
+            "**/.next/",
             "**/.vscode/",
             "**/android/",
             "**/build/",
             "**/coverage/",
             "**/dist/",
             "**/ios/",
-            "**/.next/",
-            "**/.next.mobile/",
-            "**/node_modules/",
             "**/next-env.d.ts",
+            "**/node_modules/",
         ],
     },
 

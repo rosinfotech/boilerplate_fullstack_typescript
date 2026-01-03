@@ -35,6 +35,8 @@ const PagePlugins = () => {
         };
 
         const updateSafeArea = () => {
+            if (typeof document === "undefined") return;
+
             const computedStyle = getComputedStyle(document.documentElement);
 
             setSafeAreaInsets({

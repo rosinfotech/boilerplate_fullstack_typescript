@@ -4,6 +4,7 @@ import type { MenuProps } from "antd";
 import type { FC, PropsWithChildren } from "react";
 import { MenuOutlined } from "@ant-design/icons";
 import { Button, ConfigProvider, Drawer, Layout } from "antd";
+import { safeAreaInit } from "@/capacitor/safeAreaInit";
 import { NavigationMenu } from "@/components/NavigationMenu";
 import { ThemeToggle } from "@/components/ThemeToggle/ThemeToggle";
 import { MENU_ITEMS_MOBILE } from "@/configs/menu-items-mobile";
@@ -17,6 +18,8 @@ import {
     useStore,
 } from "@/lib/store";
 
+
+safeAreaInit();
 
 const { Content, Header } = Layout;
 
