@@ -7,7 +7,7 @@ FROM base AS deps
 RUN apk add --no-cache libc6-compat
 
 COPY package.json package-lock.json ./
-COPY src/apps/backend/package.json ./src/apps/backend/
+COPY src/apps/backend/services/service-1/package.json ./src/apps/backend/services/service-1/
 COPY src/types/package.json ./src/types/
 COPY src/utils/package.json ./src/utils/
 
@@ -18,23 +18,24 @@ FROM base AS builder
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-RUN npm run build:backend
+RUN npm run build --workspace=@backend/service-1
 
 FROM base AS runner
 
-ENV NODE_ENV=development
+ARG NODE_ENV_ARG=development
+ENV NODE_ENV=${NODE_ENV_ARG}
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nestjs
 
-COPY --from=builder --chown=nestjs:nodejs /app/src/apps/backend/.build.backend ./.build.backend
+COPY --from=builder --chown=nestjs:nodejs /app/src/apps/backend/services/service-1/.build ./.build
 COPY --from=builder --chown=nestjs:nodejs /app/node_modules ./node_modules
 COPY --from=builder /app/envs ./envs
 
 USER nestjs
 
-ARG PORT=38502
+ARG PORT=38503
 ENV PORT=${PORT}
 EXPOSE ${PORT}
 
-CMD ["node", ".build.backend/main"]
+CMD ["node", ".build/main"]

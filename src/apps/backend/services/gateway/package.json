@@ -1,18 +1,19 @@
 {
-    "name": "@apps/backend",
-    "version": "0.0.5",
+    "name": "@backend/gateway",
+    "version": "0.0.6",
     "private": true,
     "scripts": {
         "build": "nest build",
-        "dev": "dotenv -e ../../../envs/.env.development.backend -e ../../../envs/.env.local.backend -- nest start --watch",
-        "start": "dotenv -e ../../../envs/.env.production.backend -- node .build.backend/main",
-        "start:debug": "dotenv -e ../../../envs/.env.development.backend -e ../../../envs/.env.local.backend -- nest start --debug --watch",
-        "start:prod": "dotenv -e ../../../envs/.env.production.backend -- node .build.backend/main",
+        "dev": "dotenv -e ../../../../../envs/.env.development.backend -e ../../../../../envs/.env.local.backend -- nest start --watch",
+        "start": "dotenv -e ../../../../../envs/.env.production.backend -- node .build/main",
+        "start:debug": "dotenv -e ../../../../../envs/.env.development.backend -e ../../../../../envs/.env.local.backend -- nest start --debug --watch",
+        "start:prod": "dotenv -e ../../../../../envs/.env.production.backend -- node .build/main",
         "type-check": "tsc --noEmit"
     },
     "dependencies": {
         "@nestjs/common": "^11.0.0",
         "@nestjs/core": "^11.0.0",
+        "@nestjs/microservices": "^11.0.0",
         "@nestjs/platform-express": "^11.0.0",
         "reflect-metadata": "^0.2.2",
         "rxjs": "^7.8.1"

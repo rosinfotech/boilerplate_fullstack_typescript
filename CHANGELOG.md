@@ -6,6 +6,17 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.0.6] - 2025-01-04
+
+### Added
+
+- Implementation API Gateway microservice pattern;
+- `kill_services` command;
+
+### Optimized
+
+- OPS files;
+
 ## [0.0.5] - 2025-01-03
 
 ### Added

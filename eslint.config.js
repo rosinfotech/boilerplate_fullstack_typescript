@@ -12,6 +12,7 @@ export default [
     {
         ignores: [
             "**/*.min.js",
+            "**/.build/",
             "**/.build.backend/",
             "**/.build.frontend/",
             "**/.build.mobile/",

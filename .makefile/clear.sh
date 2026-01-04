@@ -1,8 +1,6 @@
 #!/bin/bash
 
-lsof -ti:38501 | xargs kill -9
-lsof -ti:38502 | xargs kill -9
-lsof -ti:8081 | xargs kill -9
+source ./.makefile/kill_services.sh
 
 rm -rf android
 rm -rf ios

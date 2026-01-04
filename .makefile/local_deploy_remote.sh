@@ -38,17 +38,15 @@ main() {
 
     sshFileUpload "./package-lock.json" "/home/boilerplate-fullstack-typescript/app/package-lock.json"
 
-    sshFileUpload "./next.config.ts" "/home/boilerplate-fullstack-typescript/app/next.config.ts"
-
-    sshFileUpload "./postcss.config.mjs" "/home/boilerplate-fullstack-typescript/app/postcss.config.mjs"
-
     sshFileUpload "./tsconfig.json" "/home/boilerplate-fullstack-typescript/app/tsconfig.json"
+
+    sshFileUpload "./tsconfig.base.json" "/home/boilerplate-fullstack-typescript/app/tsconfig.base.json"
+
+    sshDirectoryUpload "./.scripts" "/home/boilerplate-fullstack-typescript/app/.scripts" "/.DS_Store"
 
     sshDirectoryUpload "./envs" "/home/boilerplate-fullstack-typescript/app/envs" "/.DS_Store"
 
     sshDirectoryUpload "./ops" "/home/boilerplate-fullstack-typescript/app/ops" "/.DS_Store"
-
-    sshDirectoryUpload "./public" "/home/boilerplate-fullstack-typescript/app/public" "/.DS_Store"
 
     sshDirectoryUpload "./src" "/home/boilerplate-fullstack-typescript/app/src" "/.DS_Store"
 

@@ -1,0 +1,30 @@
+{
+    "name": "@backend/service-1",
+    "version": "0.0.6",
+    "private": true,
+    "scripts": {
+        "build": "nest build",
+        "dev": "dotenv -e ../../../../../envs/.env.development.backend -e ../../../../../envs/.env.local.backend -- nest start --watch",
+        "start": "dotenv -e ../../../../../envs/.env.production.backend -- node .build/main",
+        "start:debug": "dotenv -e ../../../../../envs/.env.development.backend -e ../../../../../envs/.env.local.backend -- nest start --debug --watch",
+        "start:prod": "dotenv -e ../../../../../envs/.env.production.backend -- node .build/main",
+        "type-check": "tsc --noEmit"
+    },
+    "dependencies": {
+        "@nestjs/common": "^11.0.0",
+        "@nestjs/core": "^11.0.0",
+        "@nestjs/microservices": "^11.0.0",
+        "reflect-metadata": "^0.2.2",
+        "rxjs": "^7.8.1"
+    },
+    "devDependencies": {
+        "@nestjs/cli": "^11.0.14",
+        "@nestjs/schematics": "^10.2.3",
+        "@types/node": "^22.10.2",
+        "dotenv-cli": "^11.0.0",
+        "ts-loader": "^9.5.1",
+        "ts-node": "^10.9.2",
+        "tsconfig-paths": "^4.2.0",
+        "typescript": "^5.7.2"
+    }
+}

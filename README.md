@@ -55,6 +55,14 @@
 
 ### Development
 
+- Backend:
+
+  - `npm run dev:backend`;
+
+    - http://localhost:38502/api/service-1;
+    - http://localhost:38502/api/service-2;
+    - http://localhost:38502/api/service-3;
+
 - Web:
 
   - `npm run dev`
@@ -156,3 +164,4 @@
 ## Other
 
 - Command `make clear` removes all development artifacts directories;
+- Command `make kill_services` kills all processes services;

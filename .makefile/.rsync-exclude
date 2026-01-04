@@ -1,0 +1,10 @@
+*/.build.backend/*
+*/.build.frontend/*
+*/.build.mobile/*
+*/.build/*
+*/.next/*
+*/android/*
+*/ios/*
+*/node_modules/*
+.DS_Store
+tsconfig.tsbuildinfo

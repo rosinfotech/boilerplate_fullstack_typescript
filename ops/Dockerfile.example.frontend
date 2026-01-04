@@ -19,7 +19,8 @@ RUN npm run build
 
 FROM base AS runner
 
-ENV NODE_ENV=development
+ARG NODE_ENV_ARG=development
+ENV NODE_ENV=${NODE_ENV_ARG}
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
