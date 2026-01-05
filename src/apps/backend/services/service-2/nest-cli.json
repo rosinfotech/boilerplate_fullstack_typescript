@@ -5,9 +5,9 @@
         "deleteOutDir": true,
         "tsConfigPath": "tsconfig.json"
     },
+    "entryFile": "apps/backend/services/service-2/main",
     "generateOptions": {
         "spec": false
     },
-    "sourceRoot": ".",
-    "entryFile": "main"
+    "sourceRoot": "."
 }

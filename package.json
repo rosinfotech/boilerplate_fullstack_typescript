@@ -1,7 +1,7 @@
 {
     "name": "@rosinfo.tech/boilerplate_fullstack_typescript",
     "description": "Rosinfotech Boilerplate Fullstack TypeScript",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "author": "rosinfo.tech",
     "license": "UNLICENSED",
     "scripts": {
@@ -81,7 +81,11 @@
     "workspaces": [
         "src/apps/*",
         "src/apps/backend/services/*",
+        "src/modules",
         "src/types",
         "src/utils"
-    ]
+    ],
+    "dependencies": {
+        "@nestjs/terminus": "^11.0.0"
+    }
 }

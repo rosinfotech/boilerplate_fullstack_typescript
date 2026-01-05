@@ -6,6 +6,12 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.0.7] - 2025-01-05
+
+### Added
+
+- Truly microservices health check;
+
 ## [0.0.6] - 2025-01-04
 
 ### Added

@@ -1,5 +1,5 @@
-0.0.6
-0.0.6
+0.0.7
+0.0.7
 envs/.env.development.backend
 envs/.env.development.frontend
 envs/.env.development.mobile
@@ -20,6 +20,7 @@ src/apps/backend/services/service-1/package.json
 src/apps/backend/services/service-2/package.json
 src/apps/backend/services/service-3/package.json
 src/apps/frontend/package.json
+src/modules/package.json
 src/types/package.json
 src/utils/package.json
 www/index.html

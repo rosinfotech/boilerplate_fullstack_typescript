@@ -1,20 +1,22 @@
 {
     "name": "@backend/gateway",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "private": true,
     "scripts": {
         "build": "nest build",
         "dev": "dotenv -e ../../../../../envs/.env.development.backend -e ../../../../../envs/.env.local.backend -- nest start --watch",
-        "start": "dotenv -e ../../../../../envs/.env.production.backend -- node .build/main",
+        "start": "dotenv -e ../../../../../envs/.env.production.backend -- node .build/apps/backend/services/gateway/main",
         "start:debug": "dotenv -e ../../../../../envs/.env.development.backend -e ../../../../../envs/.env.local.backend -- nest start --debug --watch",
-        "start:prod": "dotenv -e ../../../../../envs/.env.production.backend -- node .build/main",
+        "start:prod": "dotenv -e ../../../../../envs/.env.production.backend -- node .build/apps/backend/services/gateway/main",
         "type-check": "tsc --noEmit"
     },
     "dependencies": {
+        "@nestjs/axios": "^4.0.1",
         "@nestjs/common": "^11.0.0",
         "@nestjs/core": "^11.0.0",
         "@nestjs/microservices": "^11.0.0",
         "@nestjs/platform-express": "^11.0.0",
+        "axios": "^1.13.2",
         "reflect-metadata": "^0.2.2",
         "rxjs": "^7.8.1"
     },

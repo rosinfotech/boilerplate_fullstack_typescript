@@ -1,0 +1,10 @@
+{
+    "name": "@shared/modules",
+    "version": "0.0.7",
+    "main": "index.ts",
+    "private": true,
+    "type": "commonjs",
+    "exports": {
+        "./*": "./*"
+    }
+}

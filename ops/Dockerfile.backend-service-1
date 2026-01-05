@@ -38,4 +38,4 @@ ARG PORT=38503
 ENV PORT=${PORT}
 EXPOSE ${PORT}
 
-CMD ["node", ".build/main"]
+CMD ["node", ".build/apps/backend/services/service-1/main"]

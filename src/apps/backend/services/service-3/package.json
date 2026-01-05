@@ -1,13 +1,13 @@
 {
     "name": "@backend/service-3",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "private": true,
     "scripts": {
         "build": "nest build",
         "dev": "dotenv -e ../../../../../envs/.env.development.backend -e ../../../../../envs/.env.local.backend -- nest start --watch",
-        "start": "dotenv -e ../../../../../envs/.env.production.backend -- node .build/main",
+        "start": "dotenv -e ../../../../../envs/.env.production.backend -- node .build/apps/backend/services/service-3/main",
         "start:debug": "dotenv -e ../../../../../envs/.env.development.backend -e ../../../../../envs/.env.local.backend -- nest start --debug --watch",
-        "start:prod": "dotenv -e ../../../../../envs/.env.production.backend -- node .build/main",
+        "start:prod": "dotenv -e ../../../../../envs/.env.production.backend -- node .build/apps/backend/services/service-3/main",
         "type-check": "tsc --noEmit"
     },
     "dependencies": {

@@ -59,9 +59,20 @@
 
   - `npm run dev:backend`;
 
-    - http://localhost:38502/api/service-1;
-    - http://localhost:38502/api/service-2;
-    - http://localhost:38502/api/service-3;
+    - Health check via Gateway API:
+
+      - http://localhost:38502/api/service-1/health/live;
+      - http://localhost:38502/api/service-1/health/ready;
+      - http://localhost:38502/api/service-2/health/live;
+      - http://localhost:38502/api/service-2/health/ready;
+      - http://localhost:38502/api/service-3/health/live;
+      - http://localhost:38502/api/service-3/health/ready;
+
+    - Health check via HTTP:
+
+      - http://localhost:38503/health/live;
+      - http://localhost:38504/health/live;
+      - http://localhost:38505/health/live;
 
 - Web:
 
@@ -85,9 +96,7 @@
       - `npm run build:mobile:android`;
       - `npm run dev:mobile:server:android`;
 
-
     - Terminal 2: `npm run dev:mobile:android`;
-
 
 ### Building
 

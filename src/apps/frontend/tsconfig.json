@@ -12,6 +12,7 @@
             "@/*": ["./*"],
             "@/configs/*": ["../../configs/*"],
             "@/types/*": ["../../types/*"],
+            "@shared/modules/*": ["../../modules/*"],
             "@shared/types/*": ["../../types/*"],
             "@shared/utils/*": ["../../utils/*"]
         },

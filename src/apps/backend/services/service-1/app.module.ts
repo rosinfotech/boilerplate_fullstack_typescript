@@ -1,9 +1,13 @@
 import { Module } from "@nestjs/common";
 
-import { PresentationModule } from "./modules/presentation.module";
+import { HealthModule } from "@shared/modules/health/health.module";
 
 
 @Module({
-    imports: [PresentationModule],
+    imports: [
+        HealthModule.forRoot({
+            serviceName: "service-1",
+        }),
+    ],
 })
 export class AppModule {}
