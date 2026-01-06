@@ -1,9 +1,7 @@
-import type { HttpService } from "@nestjs/axios";
 import type { OnModuleInit } from "@nestjs/common";
-
-import type { ClientProxy } from "@nestjs/microservices";
+import { HttpService } from "@nestjs/axios";
 import { Controller, Get } from "@nestjs/common";
-import { ClientProxyFactory, Transport } from "@nestjs/microservices";
+import { ClientProxy, ClientProxyFactory, Transport } from "@nestjs/microservices";
 import { firstValueFrom } from "rxjs";
 
 

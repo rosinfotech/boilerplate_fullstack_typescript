@@ -6,7 +6,7 @@ const isDevelopment = process.env.NODE_ENV === "development";
 const isAndroid = process.env.NEXT_PUBLIC_PLATFORM_MOBILE === "android";
 const port = process.env.PORT || "38501";
 
-logEnvVariables();
+logEnvVariables(__filename);
 
 const config: CapacitorConfig = {
     appId: "tech.rosinfo.demo.boilerplate_fullstack_typescript",

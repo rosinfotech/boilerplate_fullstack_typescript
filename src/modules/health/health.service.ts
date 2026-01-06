@@ -1,7 +1,7 @@
-import type { HealthCheckResult, HealthCheckService, HealthIndicatorResult  } from "@nestjs/terminus";
+import type { HealthCheckResult, HealthIndicatorResult } from "@nestjs/terminus";
 import type { IHealthModuleOptions } from "./types";
 import { Inject, Injectable } from "@nestjs/common";
-
+import { HealthCheckService } from "@nestjs/terminus";
 
 
 @Injectable()

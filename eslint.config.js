@@ -83,5 +83,12 @@ export default [
         },
     },
 
+    {
+        files: ["**/*.{ts,tsx}"],
+        rules: {
+            "@typescript-eslint/consistent-type-imports": "off",
+        },
+    },
+
     eslintConfigPrettier,
 ];

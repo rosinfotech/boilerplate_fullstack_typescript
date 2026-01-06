@@ -1,7 +1,7 @@
 {
     "name": "@rosinfo.tech/boilerplate_fullstack_typescript",
     "description": "Rosinfotech Boilerplate Fullstack TypeScript",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "author": "rosinfo.tech",
     "license": "UNLICENSED",
     "scripts": {

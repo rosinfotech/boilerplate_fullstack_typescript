@@ -1,5 +1,5 @@
-import type { PropsWithChildren } from "react";
 import "./globals.css";
+import type { PropsWithChildren } from "react";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { LayoutContentMobile } from "@/layouts/LayoutContentMobile";
 import { metadata as appMetadata } from "./metadata/constants-mobile";

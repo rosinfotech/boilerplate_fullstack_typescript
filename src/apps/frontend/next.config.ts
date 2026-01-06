@@ -4,7 +4,7 @@ import { logEnvVariables } from "../../../.scripts/log-env-variables.ts";
 
 const isMobile = process.env.NEXT_PUBLIC_PLATFORM === "mobile";
 
-logEnvVariables();
+logEnvVariables(__filename);
 
 const nextConfig: NextConfig = isMobile
     ? {

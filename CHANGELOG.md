@@ -6,6 +6,12 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.0.8] - 2025-01-06
+
+### Improved
+
+- Docker images building;
+
 ## [0.0.7] - 2025-01-05
 
 ### Added

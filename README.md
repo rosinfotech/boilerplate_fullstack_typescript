@@ -39,7 +39,13 @@
 
 ## Deployed version
 
-- https://boilerplate-fullstack-typescript.demo.rosinfo.tech/
+- https://boilerplate-fullstack-typescript.demo.rosinfo.tech/;
+- https://boilerplate-fullstack-typescript.demo.rosinfo.tech/api/service-1/health/live;
+- https://boilerplate-fullstack-typescript.demo.rosinfo.tech/api/service-1/health/ready;
+- https://boilerplate-fullstack-typescript.demo.rosinfo.tech/api/service-2/health/live;
+- https://boilerplate-fullstack-typescript.demo.rosinfo.tech/api/service-2/health/ready;
+- https://boilerplate-fullstack-typescript.demo.rosinfo.tech/api/service-3/health/live;
+- https://boilerplate-fullstack-typescript.demo.rosinfo.tech/api/service-3/health/ready;
 
 ## Quick Start
 
@@ -76,7 +82,7 @@
 
 - Web:
 
-  - `npm run dev`
+  - `npm run dev:frontend`
 
 - Mobile:
 
@@ -98,11 +104,19 @@
 
     - Terminal 2: `npm run dev:mobile:android`;
 
+- Backend + Web:
+
+  - `npm run dev`;
+
 ### Building
+
+- Backend:
+
+  - `npm run build:backend`;
 
 - Web:
 
-  - `npm run build`;
+  - `npm run build:frontend`;
 
 - Mobile:
 
@@ -115,6 +129,10 @@
     - Android:
 
       - `npm run build:mobile:android`;
+
+- Backend + Web:
+
+  - `npm run build`;
 
 ### Deployment
 
@@ -155,6 +173,18 @@
         root /home/boilerplate-fullstack-typescript/www;
         ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;
         ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
+
+        location /api/ {
+            proxy_buffering off;
+            proxy_pass http://localhost:38502;
+            proxy_pass_request_headers on;
+            proxy_redirect off;
+            proxy_set_header Host $host;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_set_header X-NginX-Proxy true;
+            proxy_set_header X-Real-IP $remote_addr;
+        }
 
         location / {
             proxy_buffering off;
