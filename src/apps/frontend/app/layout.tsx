@@ -1,13 +1,12 @@
 import "./globals.css";
 import type { PropsWithChildren } from "react";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
-import { LayoutContent } from "@/layouts/LayoutContent";
 import { metadata as appMetadata } from "./metadata/constants";
 
 
 export const metadata = appMetadata;
 
-const RootLayout = (props: Readonly<PropsWithChildren>) => {
+const HTMLLayout = (props: Readonly<PropsWithChildren>) => {
     const { children } = props;
 
     return (
@@ -17,11 +16,11 @@ const RootLayout = (props: Readonly<PropsWithChildren>) => {
             </head>
             <body>
                 <AntdRegistry>
-                    <LayoutContent>{children}</LayoutContent>
+                    {children}
                 </AntdRegistry>
             </body>
         </html>
     );
 };
 
-export default RootLayout;
+export default HTMLLayout;

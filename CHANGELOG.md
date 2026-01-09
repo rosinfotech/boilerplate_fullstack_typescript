@@ -6,6 +6,12 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.0.9] - 2025-01-10
+
+### Added
+
+- FormSignInEmail;
+
 ## [0.0.8] - 2025-01-06
 
 ### Improved

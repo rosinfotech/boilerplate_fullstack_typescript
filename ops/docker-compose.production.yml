@@ -20,7 +20,7 @@ services:
             - SERVICE_HOST_SERVICE_1=backend-service-1
             - SERVICE_HOST_SERVICE_2=backend-service-2
             - SERVICE_HOST_SERVICE_3=backend-service-3
-        image: b_f_t_production_backend_gateway:0.0.8
+        image: b_f_t_production_backend_gateway:0.0.9
         ports:
             - "38502:38502"
         restart: unless-stopped
@@ -39,7 +39,7 @@ services:
         container_name: b_f_t_production_backend_service_1
         env_file:
             - ../envs/.env.production.backend
-        image: b_f_t_production_backend_service_1:0.0.8
+        image: b_f_t_production_backend_service_1:0.0.9
         ports:
             - "38503:38503"
             - "38506:38506"
@@ -59,7 +59,7 @@ services:
         container_name: b_f_t_production_backend_service_2
         env_file:
             - ../envs/.env.production.backend
-        image: b_f_t_production_backend_service_2:0.0.8
+        image: b_f_t_production_backend_service_2:0.0.9
         ports:
             - "38504:38504"
             - "38507:38507"
@@ -79,7 +79,7 @@ services:
         container_name: b_f_t_production_backend_service_3
         env_file:
             - ../envs/.env.production.backend
-        image: b_f_t_production_backend_service_3:0.0.8
+        image: b_f_t_production_backend_service_3:0.0.9
         ports:
             - "38505:38505"
             - "38508:38508"
@@ -102,7 +102,7 @@ services:
                 condition: service_healthy
         env_file:
             - ../envs/.env.production.frontend
-        image: b_f_t_production_frontend:0.0.8
+        image: b_f_t_production_frontend:0.0.9
         ports:
             - "${PORT:-38501}:${PORT:-38501}"
         restart: unless-stopped

@@ -1,6 +1,6 @@
 {
     "name": "@apps/frontend",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "scripts": {
         "build": "dotenv -e ../../../envs/.env.production.frontend -e ../../../envs/.env.local.frontend -- next build",
         "build:mobile:android": "dotenv -e ../../../envs/.env.production.mobile -e ../../../envs/.env.local.mobile -- sh -c 'NEXT_PUBLIC_PLATFORM_MOBILE=android next build && NEXT_PUBLIC_PLATFORM_MOBILE=android npm run mobile:assets:android && NEXT_PUBLIC_PLATFORM_MOBILE=android npx cap sync android && NEXT_PUBLIC_PLATFORM_MOBILE=android npx cap open android'",
