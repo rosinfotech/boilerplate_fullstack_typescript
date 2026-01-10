@@ -17,12 +17,10 @@ export const LayoutCenter: FC<PropsWithChildren> = props => {
     const resolvedTheme = useResolvedTheme();
 
     return (
-        <ConfigProvider
-            theme={resolvedTheme === "dark" ? antDesignThemeDark : antDesignThemeLight}
-        >
+        <ConfigProvider theme={resolvedTheme === "dark" ? antDesignThemeDark : antDesignThemeLight}>
             <Layout className="w-full h-full">
                 <Content className="w-full h-full">
-                    <Flex align="center" className="w-full h-full" justify="center" vertical >
+                    <Flex align="center" className="w-full h-full" justify="center" vertical>
                         {children}
                     </Flex>
                 </Content>

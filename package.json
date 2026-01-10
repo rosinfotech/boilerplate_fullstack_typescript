@@ -1,7 +1,7 @@
 {
     "name": "@rosinfo.tech/boilerplate_fullstack_typescript",
     "description": "Rosinfotech Boilerplate Fullstack TypeScript",
-    "version": "0.0.9",
+    "version": "0.0.10",
     "author": "rosinfo.tech",
     "license": "UNLICENSED",
     "scripts": {
@@ -49,12 +49,12 @@
     },
     "devDependencies": {
         "@eslint/js": "^9.39.2",
-        "@rosinfo.tech/eslint-config-import": "^0.0.9",
+        "@rosinfo.tech/eslint-config-import": "^0.0.10",
         "@rosinfo.tech/eslint-config-javascript": "^0.0.32",
         "@rosinfo.tech/eslint-config-react": "^0.0.20",
         "@rosinfo.tech/eslint-config-typescript": "^0.0.27",
         "@rosinfo.tech/prettier-config-standard": "^0.0.12",
-        "@rosinfo.tech/stylelint-config-standard": "^0.0.9",
+        "@rosinfo.tech/stylelint-config-standard": "^0.0.10",
         "@types/connect": "^3.4.38",
         "@types/node": "^22.10.2",
         "@types/react": "^19.0.1",

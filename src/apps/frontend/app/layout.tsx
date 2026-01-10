@@ -15,9 +15,7 @@ const HTMLLayout = (props: Readonly<PropsWithChildren>) => {
                 <link href="/fonts/mont/index.css" rel="stylesheet" />
             </head>
             <body>
-                <AntdRegistry>
-                    {children}
-                </AntdRegistry>
+                <AntdRegistry>{children}</AntdRegistry>
             </body>
         </html>
     );
